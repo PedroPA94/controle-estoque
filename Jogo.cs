@@ -2,7 +2,7 @@ class Jogo
 {
     public string Nome { get; init; }
     public int AnoLancamento { get; init; }
-    public string Produtora { get; init; }
+    public string Desenvolvedor { get; init; }
     public string Genero { get; init; }
     private int QtdEstoque { get; set; }
 
@@ -25,7 +25,7 @@ class Jogo
     {
         Nome = nome;
         AnoLancamento = ano;
-        Produtora = produtora;
+        Desenvolvedor = produtora;
         Genero = genero;
         QtdEstoque = 0;
     }
@@ -37,7 +37,7 @@ class Jogo
 
     public string Detalhes()
     {
-        return $"{Nome} ({AnoLancamento})\nProdutora: {Produtora}\nGênero: {Genero}\nPreço: R$ {Preco}\nQuantidade em estoque: {QtdEstoque}";
+        return $"{Nome} ({AnoLancamento})\nDesenvolvedor(a): {Desenvolvedor}\nGênero: {Genero}\nPreço: R$ {Preco}\nQuantidade em estoque: {QtdEstoque}";
     }
 
     public void AdicionarAoEstoque(int qtdAdicionada)

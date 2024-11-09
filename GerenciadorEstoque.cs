@@ -2,6 +2,11 @@ class GerenciadorEstoque
 {
     private Jogo[] Jogos = [];
 
+    public GerenciadorEstoque()
+    {
+        CargaInicial();
+    }
+
     public void AdicionarJogo(Jogo jogo)
     {
         Jogo[] jogosAtualizados = new Jogo[Jogos.Length + 1];
@@ -67,5 +72,50 @@ class GerenciadorEstoque
         }
 
         Console.WriteLine($"{Jogos[posicao].Detalhes()}");
+    }
+
+    public void AlterarPreco(int posicao, float preco)
+    {
+        Jogos[posicao].Preco = preco;
+    }
+
+    private void CargaInicial()
+    {
+        Jogo warcraft3 = new Jogo(
+            "Warcraft 3",
+            2002,
+            "Blizzard Entertainment",
+            "Estratégia em tempo real"
+        );
+        warcraft3.Preco = 79.90f;
+
+        Jogo morrowind = new Jogo(
+            "The Elder Scrolls III: Morrowind",
+            2002,
+            "Bethesda Game Studios",
+            "RPG de ação"
+        );
+        morrowind.Preco = 90.00f;
+
+        Jogo maxPayne = new Jogo(
+            "Max Payne",
+            2001,
+            "Remedy Entertainment",
+            "Tiro em terceira pessoa"
+        );
+        maxPayne.Preco = 60.00f;
+
+        Jogo diablo2 = new Jogo(
+            "Diablo II",
+            2000,
+            "Blizzard Entertainment",
+            "RPG de ação"
+        );
+        diablo2.Preco = 60.00f;
+
+        AdicionarJogo(warcraft3);
+        AdicionarJogo(morrowind);
+        AdicionarJogo(maxPayne);
+        AdicionarJogo(diablo2);
     }
 }
