@@ -22,10 +22,7 @@ class GerenciadorEstoque
 
     public void RemoverJogo(int posicao)
     {
-        if (posicao < 0 || posicao > Jogos.Length - 1)
-        {
-            throw new ArgumentException("A posição informada é inválida. Ela deve ser um dos valores na lista de jogos.");
-        }
+        VerificarPosicaoValida(posicao);
 
         Jogo[] jogosAtualizados = new Jogo[Jogos.Length - 1];
 
@@ -66,17 +63,22 @@ class GerenciadorEstoque
             return;
         }
 
-        if (posicao < 0 || posicao > Jogos.Length - 1)
-        {
-            throw new ArgumentException("A posição informada é inválida. Ela deve ser um dos valores na lista de jogos.");
-        }
-
+        VerificarPosicaoValida(posicao);
         Console.WriteLine($"{Jogos[posicao].Detalhes()}");
     }
 
     public void AlterarPreco(int posicao, float preco)
     {
+        VerificarPosicaoValida(posicao);
         Jogos[posicao].Preco = preco;
+    }
+
+    private void VerificarPosicaoValida(int posicao)
+    {
+        if (posicao < 0 || posicao > Jogos.Length - 1)
+        {
+            throw new ArgumentException("A posição informada é inválida. Ela deve ser um dos valores na lista de jogos.");
+        }
     }
 
     private void CargaInicial()
