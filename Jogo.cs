@@ -16,6 +16,7 @@ class Jogo
             {
                 throw new ArgumentException("O preço não pode ser menor do que zero");
             }
+            
             this._preco = value;
         } 
     }
@@ -45,7 +46,7 @@ class Jogo
         {
             throw new ArgumentException("A quantidade a adicionar não pode ser negativa");
         }
-        
+
         QtdEstoque += qtdAdicionada;
     }
 
@@ -57,7 +58,7 @@ class Jogo
         }
 
         if (qtdRemovida > QtdEstoque) {
-            throw new Exception("Quantidade a remover é superior à quantidade em estoque");
+            throw new InvalidOperationException("Quantidade a remover é superior à quantidade em estoque");
         }
 
         QtdEstoque -= qtdRemovida;
