@@ -1,0 +1,15 @@
+/home/pedro/Documentos/Senac/Algoritmos II/pti/controle-estoque/bin/Debug/net8.0/controle-estoque
+/home/pedro/Documentos/Senac/Algoritmos II/pti/controle-estoque/bin/Debug/net8.0/controle-estoque.deps.json
+/home/pedro/Documentos/Senac/Algoritmos II/pti/controle-estoque/bin/Debug/net8.0/controle-estoque.runtimeconfig.json
+/home/pedro/Documentos/Senac/Algoritmos II/pti/controle-estoque/bin/Debug/net8.0/controle-estoque.dll
+/home/pedro/Documentos/Senac/Algoritmos II/pti/controle-estoque/bin/Debug/net8.0/controle-estoque.pdb
+/home/pedro/Documentos/Senac/Algoritmos II/pti/controle-estoque/obj/Debug/net8.0/controle-estoque.GeneratedMSBuildEditorConfig.editorconfig
+/home/pedro/Documentos/Senac/Algoritmos II/pti/controle-estoque/obj/Debug/net8.0/controle-estoque.AssemblyInfoInputs.cache
+/home/pedro/Documentos/Senac/Algoritmos II/pti/controle-estoque/obj/Debug/net8.0/controle-estoque.AssemblyInfo.cs
+/home/pedro/Documentos/Senac/Algoritmos II/pti/controle-estoque/obj/Debug/net8.0/controle-estoque.csproj.CoreCompileInputs.cache
+/home/pedro/Documentos/Senac/Algoritmos II/pti/controle-estoque/obj/Debug/net8.0/controle-estoque.sourcelink.json
+/home/pedro/Documentos/Senac/Algoritmos II/pti/controle-estoque/obj/Debug/net8.0/controle-estoque.dll
+/home/pedro/Documentos/Senac/Algoritmos II/pti/controle-estoque/obj/Debug/net8.0/refint/controle-estoque.dll
+/home/pedro/Documentos/Senac/Algoritmos II/pti/controle-estoque/obj/Debug/net8.0/controle-estoque.pdb
+/home/pedro/Documentos/Senac/Algoritmos II/pti/controle-estoque/obj/Debug/net8.0/controle-estoque.genruntimeconfig.cache
+/home/pedro/Documentos/Senac/Algoritmos II/pti/controle-estoque/obj/Debug/net8.0/ref/controle-estoque.dll
