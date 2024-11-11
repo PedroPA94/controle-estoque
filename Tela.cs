@@ -11,7 +11,7 @@ class Tela
     public void ExibirMenu()
     {
         Console.WriteLine();
-        Console.WriteLine("****** Bem-vindo à loja PC Gamer! ©2001 ******");
+        Console.WriteLine("****** Bem-vindo à loja PC Gamer! ©2002 ******");
         Console.WriteLine("*** Os melhores jogos para o novo milênio! ***");
         Console.WriteLine();
         Console.WriteLine("O que você deseja fazer?");
