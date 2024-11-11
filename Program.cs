@@ -8,7 +8,7 @@ class Program
         Tela tela = new Tela(gerenciador);
         int opcao = -1;
 
-        while (opcao != 0)
+        while (opcao != Tela.OPCAO_SAIDA)
         {
             tela.ExibirMenu();
             opcao = tela.LerOpcao();

@@ -1,5 +1,6 @@
 class Tela
 {
+    public const int OPCAO_SAIDA = 0;
     private GerenciadorEstoque Gerenciador;
 
     public Tela(GerenciadorEstoque gerenciador)
@@ -19,7 +20,7 @@ class Tela
         Console.WriteLine("[4] Remover jogo");
         Console.WriteLine("[5] Adicionar ao estoque");
         Console.WriteLine("[6] Remover do estoque");
-        Console.WriteLine("[0] Sair");
+        Console.WriteLine($"[{OPCAO_SAIDA}] Sair");
     }
 
     public int LerOpcao()
@@ -40,14 +41,17 @@ class Tela
     {
         switch (opcao)
         {
-            case 0:
-                Sair();
-                break;
             case 1:
                 AdicionarJogo();
                 break;
             case 2:
                 ListarJogos();
+                break;
+            case 3:
+                DetalharJogo();
+                break;
+            case OPCAO_SAIDA:
+                Sair();
                 break;
             default:
                 Console.WriteLine("Opção inválida, tente novamente.");
@@ -101,4 +105,26 @@ class Tela
         AguardarInteracaoParaVoltarAoMenu();
     }
 
+    private void DetalharJogo()
+    {
+        Console.Clear();
+        Gerenciador.ListarJogos();
+        
+        try
+        {
+            Console.WriteLine();
+            Console.Write("Informe o número do jogo a detalhar: ");
+            int numJogo = Convert.ToInt32(Console.ReadLine()!);
+            int posJogo = numJogo - 1;
+
+            Console.WriteLine();
+            Gerenciador.DetalharJogo(posJogo);
+        }
+        catch (ArgumentException e)
+        {
+            Console.WriteLine(e.Message);
+        }
+
+        AguardarInteracaoParaVoltarAoMenu();
+    }
 }
