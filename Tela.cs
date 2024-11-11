@@ -10,7 +10,9 @@ class Tela
 
     public void ExibirMenu()
     {
-        Console.WriteLine("Bem-vindo à loja PC Gamer!");
+        Console.WriteLine();
+        Console.WriteLine("****** Bem-vindo à loja PC Gamer! ©2001 ******");
+        Console.WriteLine("*** Os melhores jogos para o novo milênio! ***");
         Console.WriteLine();
         Console.WriteLine("O que você deseja fazer?");
         Console.WriteLine();
@@ -63,7 +65,7 @@ class Tela
                 Sair();
                 break;
             default:
-                Console.WriteLine("Opção inválida, tente novamente.");
+                OpcaoInvalida();
                 break;
         }
     }
@@ -218,6 +220,21 @@ class Tela
         }
 
         AguardarInteracaoParaVoltarAoMenu();
+    }
+
+    private void OpcaoInvalida()
+    {
+        Console.WriteLine();
+        Console.WriteLine("Opção inválida!");
+
+        int aguardarIteracoes = 3;
+        while (aguardarIteracoes > 0)
+        {
+            Console.SetCursorPosition(0, Console.CursorTop);
+            Console.Write($"Você poderá tentar novamente em {aguardarIteracoes--}");
+            Thread.Sleep(1000);
+        }
+        Console.Clear();
     }
 
     private int? TentarLerInteiro(string mensagem)
