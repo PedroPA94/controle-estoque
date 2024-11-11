@@ -4,16 +4,15 @@ class Program
 {
     static void Main(string[] args)
     {
-        Jogo warcraft3 = new Jogo(
-            "Warcraft 3",
-            2002,
-            "Blizzard Entertainment",
-            "Estratégia em Tempo Real"
-        );
+        GerenciadorEstoque gerenciador = new GerenciadorEstoque();
+        Tela tela = new Tela(gerenciador);
+        int opcao = -1;
 
-        warcraft3.Preco = 99.90f;
-
-        Console.WriteLine(warcraft3.Informacoes());
-        Console.WriteLine(warcraft3.Detalhes());
-    }
+        while (opcao != 0)
+        {
+            tela.ExibirMenu();
+            opcao = Convert.ToInt32(Console.ReadLine()!); 
+            tela.ExecutarAcao(opcao);
+        }
+    }    
 }

@@ -6,8 +6,8 @@ class Jogo
     public string Genero { get; init; }
     private int QtdEstoque { get; set; }
 
-    private float _preco;
-    public float Preco 
+    private double _preco;
+    public double Preco 
     { 
         get { return _preco; }
         set 
@@ -21,11 +21,11 @@ class Jogo
         } 
     }
 
-    public Jogo(string nome, int ano, string produtora, string genero)
+    public Jogo(string nome, int ano, string desenvolvedor, string genero)
     {
         Nome = nome;
         AnoLancamento = ano;
-        Desenvolvedor = produtora;
+        Desenvolvedor = desenvolvedor;
         Genero = genero;
         QtdEstoque = 0;
     }
