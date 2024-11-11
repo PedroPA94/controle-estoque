@@ -80,6 +80,13 @@ class GerenciadorEstoque
         jogo.AdicionarAoEstoque(adicaoEstoque);
     }
 
+    public void RemoverDoEstoque(int posicao, int remocaoEstoque)
+    {
+        VerificarPosicaoValida(posicao);
+        Jogo jogo = Jogos[posicao];
+        jogo.RemoverDoEstoque(remocaoEstoque);
+    }
+
     private void VerificarPosicaoValida(int posicao)
     {
         if (posicao < 0 || posicao > Jogos.Length - 1)
