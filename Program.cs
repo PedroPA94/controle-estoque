@@ -11,7 +11,7 @@ class Program
         while (opcao != 0)
         {
             tela.ExibirMenu();
-            opcao = Convert.ToInt32(Console.ReadLine()!); 
+            opcao = tela.LerOpcao();
             tela.ExecutarAcao(opcao);
         }
     }    

@@ -11,7 +11,7 @@ class Tela
     {
         Console.WriteLine("Bem-vindo à loja PC Gamer!");
         Console.WriteLine();
-        Console.WriteLine("O que você quer fazer?");
+        Console.WriteLine("O que você deseja fazer?");
         Console.WriteLine();
         Console.WriteLine("[1] Adicionar novo jogo");
         Console.WriteLine("[2] Listar jogos");
@@ -20,6 +20,20 @@ class Tela
         Console.WriteLine("[5] Adicionar ao estoque");
         Console.WriteLine("[6] Remover do estoque");
         Console.WriteLine("[0] Sair");
+    }
+
+    public int LerOpcao()
+    {
+        try
+        {
+            Console.WriteLine();
+            Console.Write("Informe uma opção: ");
+            return Convert.ToInt32(Console.ReadLine()!);
+        } 
+        catch (Exception)
+        {
+            return -1;
+        }
     }
 
     public void ExecutarAcao(int opcao)
@@ -31,6 +45,9 @@ class Tela
                 break;
             case 1:
                 AdicionarJogo();
+                break;
+            case 2:
+                ListarJogos();
                 break;
             default:
                 Console.WriteLine("Opção inválida, tente novamente.");
@@ -48,7 +65,8 @@ class Tela
     private void Sair()
     {
         Console.WriteLine();
-        Console.WriteLine("Saindo da aplicação.");
+        Console.WriteLine("Saindo da aplicação. Até breve!");
+        Console.WriteLine();
     }
 
     private void AdicionarJogo()
@@ -56,15 +74,15 @@ class Tela
         Console.Clear();
         Console.WriteLine("Adicionar um novo jogo");
         Console.WriteLine();
-        Console.Write("Qual o nome do jogo?");
+        Console.Write("Qual o nome do jogo? ");
         string nome = Console.ReadLine()!;
-        Console.Write("Em que ano ele foi lancado?");
+        Console.Write("Em que ano ele foi lancado? ");
         int ano = Convert.ToInt32(Console.ReadLine()!);
-        Console.Write("Quem desenvolveu esse jogo?");
+        Console.Write("Quem desenvolveu esse jogo? ");
         string desenvolvedor = Console.ReadLine()!;
-        Console.Write("Informe o gênero do jogo:");
+        Console.Write("Qual o gênero do jogo? ");
         string genero = Console.ReadLine()!;
-        Console.Write("Informe o preço do jogo:");
+        Console.Write("Informe o preço do jogo: ");
         double preco = Convert.ToDouble(Console.ReadLine()!);
 
         Jogo jogo = new Jogo(nome, ano, desenvolvedor, genero);
@@ -76,5 +94,11 @@ class Tela
         AguardarInteracaoParaVoltarAoMenu();
     }
 
+    private void ListarJogos()
+    {
+        Console.Clear();
+        Gerenciador.ListarJogos();
+        AguardarInteracaoParaVoltarAoMenu();
+    }
 
 }

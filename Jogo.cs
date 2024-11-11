@@ -32,12 +32,12 @@ class Jogo
 
     public string Informacoes()
     {
-        return $"{Nome} (R$ {Preco}) - {QtdEstoque} em estoque";
+        return $"{Nome} (R$ {Preco.ToString("0.00")}) - {QtdEstoque} em estoque";
     }
 
     public string Detalhes()
     {
-        return $"{Nome} ({AnoLancamento})\nDesenvolvedor(a): {Desenvolvedor}\nGênero: {Genero}\nPreço: R$ {Preco}\nQuantidade em estoque: {QtdEstoque}";
+        return $"{Nome} ({AnoLancamento})\nDesenvolvedor(a): {Desenvolvedor}\nGênero: {Genero}\nPreço: R$ {Preco.ToString("0.00")}\nQuantidade em estoque: {QtdEstoque}";
     }
 
     public void AdicionarAoEstoque(int qtdAdicionada)
