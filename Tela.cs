@@ -50,6 +50,9 @@ class Tela
             case 3:
                 DetalharJogo();
                 break;
+            case 4:
+                RemoverJogo();
+                break;
             case OPCAO_SAIDA:
                 Sair();
                 break;
@@ -123,6 +126,29 @@ class Tela
 
             Console.WriteLine();
             Gerenciador.DetalharJogo(numJogo.Value - 1);
+        }
+        catch (ArgumentException e)
+        {
+            Console.WriteLine(e.Message);
+        }
+
+        AguardarInteracaoParaVoltarAoMenu();
+    }
+
+    private void RemoverJogo()
+    {
+        Console.Clear();
+        Gerenciador.ListarJogos();
+
+        try
+        {
+            Console.WriteLine();
+            int? numJogo = TentarLerInteiro("Informe o número do jogo a remover: ");
+            if (numJogo == null) return;
+
+            Console.WriteLine();
+            Gerenciador.RemoverJogo(numJogo.Value - 1);
+            Console.WriteLine("Jogo removido com sucesso!");
         }
         catch (ArgumentException e)
         {
