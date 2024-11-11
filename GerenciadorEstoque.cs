@@ -73,6 +73,13 @@ class GerenciadorEstoque
         Jogos[posicao].Preco = preco;
     }
 
+    public void AdicionarAoEstoque(int posicao, int adicaoEstoque)
+    {
+        VerificarPosicaoValida(posicao);
+        Jogo jogo = Jogos[posicao];
+        jogo.AdicionarAoEstoque(adicaoEstoque);
+    }
+
     private void VerificarPosicaoValida(int posicao)
     {
         if (posicao < 0 || posicao > Jogos.Length - 1)
@@ -90,6 +97,7 @@ class GerenciadorEstoque
             "Estratégia em tempo real"
         );
         warcraft3.Preco = 79.90f;
+        warcraft3.AdicionarAoEstoque(3);
 
         Jogo morrowind = new Jogo(
             "The Elder Scrolls III: Morrowind",
@@ -98,6 +106,7 @@ class GerenciadorEstoque
             "RPG de ação"
         );
         morrowind.Preco = 90.00f;
+        morrowind.AdicionarAoEstoque(4);
 
         Jogo maxPayne = new Jogo(
             "Max Payne",
@@ -106,6 +115,7 @@ class GerenciadorEstoque
             "Tiro em terceira pessoa"
         );
         maxPayne.Preco = 60.00f;
+        maxPayne.AdicionarAoEstoque(1);
 
         Jogo diablo2 = new Jogo(
             "Diablo II",
@@ -114,6 +124,7 @@ class GerenciadorEstoque
             "RPG de ação"
         );
         diablo2.Preco = 60.00f;
+        diablo2.AdicionarAoEstoque(2);
 
         AdicionarJogo(warcraft3);
         AdicionarJogo(morrowind);

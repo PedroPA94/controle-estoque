@@ -53,6 +53,9 @@ class Tela
             case 4:
                 RemoverJogo();
                 break;
+            case 5:
+                AdicionarAoEstoque();
+                break;
             case OPCAO_SAIDA:
                 Sair();
                 break;
@@ -149,6 +152,32 @@ class Tela
             Console.WriteLine();
             Gerenciador.RemoverJogo(numJogo.Value - 1);
             Console.WriteLine("Jogo removido com sucesso!");
+        }
+        catch (ArgumentException e)
+        {
+            Console.WriteLine(e.Message);
+        }
+
+        AguardarInteracaoParaVoltarAoMenu();
+    }
+
+    private void AdicionarAoEstoque()
+    {
+        Console.Clear();
+        Gerenciador.ListarJogos();
+
+        try
+        {
+            Console.WriteLine();
+            int? numJogo = TentarLerInteiro("Informe o número do jogo que receberá a entrada de estoque: ");
+            if (numJogo == null) return;
+
+            int? adicaoEstoque = TentarLerInteiro("Quantos novos produtos serão adicionados? ");
+            if (adicaoEstoque == null) return;
+
+            Console.WriteLine();
+            Gerenciador.AdicionarAoEstoque(numJogo.Value - 1, adicaoEstoque.Value);
+            Console.WriteLine("O estoque do jogo foi atualizado!");
         }
         catch (ArgumentException e)
         {
