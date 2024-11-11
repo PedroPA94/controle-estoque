@@ -78,19 +78,24 @@ class Tela
         Console.Clear();
         Console.WriteLine("Adicionar um novo jogo");
         Console.WriteLine();
+
         Console.Write("Qual o nome do jogo? ");
         string nome = Console.ReadLine()!;
-        Console.Write("Em que ano ele foi lancado? ");
-        int ano = Convert.ToInt32(Console.ReadLine()!);
+
+        int? ano = TentarLerInteiro("Em que ano ele foi lançado? ");
+        if (ano == null) return;
+
         Console.Write("Quem desenvolveu esse jogo? ");
         string desenvolvedor = Console.ReadLine()!;
+
         Console.Write("Qual o gênero do jogo? ");
         string genero = Console.ReadLine()!;
-        Console.Write("Informe o preço do jogo: ");
-        double preco = Convert.ToDouble(Console.ReadLine()!);
 
-        Jogo jogo = new Jogo(nome, ano, desenvolvedor, genero);
-        jogo.Preco = preco;
+        double? preco = TentarLerDouble("Informe o preço do jogo: ");
+        if (preco == null) return;
+
+        Jogo jogo = new Jogo(nome, ano.Value, desenvolvedor, genero);
+        jogo.Preco = preco.Value;
         Gerenciador.AdicionarJogo(jogo);
 
         Console.WriteLine();
@@ -113,12 +118,11 @@ class Tela
         try
         {
             Console.WriteLine();
-            Console.Write("Informe o número do jogo a detalhar: ");
-            int numJogo = Convert.ToInt32(Console.ReadLine()!);
-            int posJogo = numJogo - 1;
+            int? numJogo = TentarLerInteiro("Informe o número do jogo a detalhar: ");
+            if (numJogo == null) return;
 
             Console.WriteLine();
-            Gerenciador.DetalharJogo(posJogo);
+            Gerenciador.DetalharJogo(numJogo.Value - 1);
         }
         catch (ArgumentException e)
         {
@@ -126,5 +130,35 @@ class Tela
         }
 
         AguardarInteracaoParaVoltarAoMenu();
+    }
+
+    private int? TentarLerInteiro(string mensagem)
+    {
+        Console.Write(mensagem);
+
+        if (int.TryParse(Console.ReadLine(), out int valor))
+        {
+            return valor;
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("Valor inválido.");
+        AguardarInteracaoParaVoltarAoMenu();
+        return null;
+    }
+
+    private double? TentarLerDouble(string mensagem)
+    {
+        Console.Write(mensagem);
+
+        if (double.TryParse(Console.ReadLine(), out double valor))
+        {
+            return valor;
+        }
+        
+        Console.WriteLine();
+        Console.WriteLine("Valor inválido.");
+        AguardarInteracaoParaVoltarAoMenu();
+        return null;
     }
 }
