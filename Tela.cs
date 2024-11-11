@@ -117,6 +117,8 @@ class Tela
     private void ListarJogos()
     {
         Console.Clear();
+        Console.WriteLine("Jogos cadastrados");
+        Console.WriteLine();
         Gerenciador.ListarJogos();
         AguardarInteracaoParaVoltarAoMenu();
     }
@@ -124,6 +126,8 @@ class Tela
     private void DetalharJogo()
     {
         Console.Clear();
+        Console.WriteLine("Detalhar jogo");
+        Console.WriteLine();
         Gerenciador.ListarJogos();
         
         try
@@ -146,6 +150,8 @@ class Tela
     private void RemoverJogo()
     {
         Console.Clear();
+        Console.WriteLine("Remover jogo");
+        Console.WriteLine();
         Gerenciador.ListarJogos();
 
         try
@@ -169,6 +175,8 @@ class Tela
     private void AdicionarAoEstoque()
     {
         Console.Clear();
+        Console.WriteLine("Adicionar produtos ao estoque");
+        Console.WriteLine();
         Gerenciador.ListarJogos();
 
         try
@@ -195,6 +203,8 @@ class Tela
     private void RemoverDoEstoque()
     {
         Console.Clear();
+        Console.WriteLine("Remover produtos do estoque");
+        Console.WriteLine();
         Gerenciador.ListarJogos();
 
         try
